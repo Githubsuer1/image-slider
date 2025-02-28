@@ -36,7 +36,7 @@ document.getElementById('next-button').addEventListener("click", nextImage);
 document.getElementById('prev-button').addEventListener("click", prevImage);
 
 // Automatically slide every 3 seconds
-// setInterval(nextImage, 3000);
+setInterval(nextImage, 3000);
 
 // Show the first image on page load
 showImages(currentSlide);
