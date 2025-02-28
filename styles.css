@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    width: 100vw;
+    min-height: 100vh;
+}
+
+/* Carousel Container */
+.carousel-container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, #a4243b, #273E47);
+    display: grid;
+    place-items: center;
+}
+
+.carousel-container h1{
+    color: #fff;
+    text-shadow: 2px 2px 4px rgb(14, 231, 191);
+}
+
+/* Carousel Slide Container */
+.carousel-slide{
+    position: relative; /* Changed from 'flex' */
+    width: 65%;
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 8px;
+    overflow: hidden;
+}
+
+/* Image Styling */
+.carousel-slide img{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+}
+
+.images{
+    display: none; /* Initially hidden */
+    transition: opacity 0.2s ease-in-out; /* Smooth fade-in */
+}
+
+/* Button Styling */
+.button-next, .button-prev{
+    padding: 8px 12px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(229, 255, 255, 0.3);
+    color: rgba(157, 7, 104, 0.819);
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Center buttons vertically */
+    cursor: pointer;
+    z-index: 10;
+}
+
+.button-next{
+    right: 15px;
+}
+
+.button-prev{
+    left: 15px;
+}
+
+/* Active Image */
+.active{
+    display: block;
+    animation: fadeIn 3s ease-in-out; /* Apply fade-in animation */
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0.2;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width:768px) {
+    .carousel-container h1{
+        margin-top: 25px;
+    }
+    .carousel-container{
+        display: flex;
+        flex-direction: column;
+        /* margin-top: 10; */
+    }
+
+    .carousel-slide{
+        position: relative; /* Changed from 'flex' */
+        width: 80%;
+        height: 320px;
+        margin-top: 100px;
+    }
+}
